@@ -1,0 +1,80 @@
+\documentclass[aspectratio=169]{beamer}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{graphicx}
+\usepackage{animate}
+\graphicspath{{figures/}}
+\usepackage{amsmath}
+\usepackage{upgreek}
+\usepackage{listings}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage{chemfig}
+\usepackage{epstopdf}
+\renewcommand*\printatom[1]{#1}
+\usepackage{appendixnumberbeamer}
+%\usepackage[noend]{algpseudocode}
+\usepackage[version=4]{mhchem}
+\usetikzlibrary{shapes.geometric}
+
+\usepackage{subfigure}
+\RequirePackage[numbers, sort&compress]{natbib}
+\usepackage{multicol}
+\usepackage[absolute,overlay]{textpos}
+\usetikzlibrary{calc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   CUSTOM THEME DECLARATION
+\newcommand{\email}[0]{aab64@cam.ac.uk}
+\newcommand{\matlab}{../../../../../../Documents/matlab/figs/}
+\usetheme{AstridChalmers}
+
+\newcommand{\COox}{{\ce{CO}_{\text{ox}}}}
+
+\newcommand{\thetaCOox}{\theta_{\COox}}
+\newcommand{\thetaOox}{\theta_{{\ce{O}}_{\text{ox}}}}
+\newcommand{\thetaOOox}{\theta_{{\ce{O2}}_{\text{ox}}}}
+\newcommand{\thetaox}{\theta_{\text{ox}}}
+\newcommand{\thetaCO}{\theta_{\ce{CO}}}
+\newcommand{\thetaOO}{\theta_{\ce{O2}}}
+\newcommand{\thetaO}{\theta_{\ce{O}}}
+
+\newcommand{\ka}[1]{k_{\text{a,}#1}}
+\newcommand{\kd}[1]{k_{\text{d,}#1}}
+\newcommand{\mur}[1]{{\color{cred}{#1}}}
+\newcommand{\mug}[1]{{\color{cgreen}{#1}}}
+\newcommand{\mub}[1]{{\color{cnavy}{#1}}}
+
+\setbeamercolor{block body}{bg=cgreen!10}
+\setbeamercolor{block title}{bg=cgreen!30}
+\setbeamertemplate{blocks}[rounded]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   AUTHOR AND PRESENTATION DETAILS
+\title{\huge{Title}}
+\author{Astrid Boje}
+%\institute[Chalmers University]
+%{
+%  Chemical Physics Division\\
+%  Department of Physics
+%  Chalmers University of Technology
+%}
+\subject{Kinetics for heterogeneous catalysis}
+\date{\small\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   CUSTOM COMMANDS
+
+\begin{document}
+	
+	\mytitleframe
+	
+	\section{First section}
+	\input{slides/tikzslide}
+	
+\end{document}
+
+

@@ -1,0 +1,73 @@
+\pgfdeclareimage[height=0.04\paperheight]{chalmers-logo}{figures/chalmers-logo.png}
+
+\definecolor{cnavy}{RGB}{4,41,112}
+\definecolor{cgrey}{RGB}{72,72,72}
+\definecolor{firebrick}{RGB}{178,34,34}
+\definecolor{cred}{RGB}{192,0,0}
+\definecolor{cgreen}{RGB}{0,157,0}
+\definecolor{darkgreen}{rgb}{0,0.7,0.0}
+\definecolor{darkblue}{rgb}{0,0.0,0.7}
+\definecolor{darkred}{rgb}{0.7,0.0,0.0}
+
+\setbeamercolor{title}{fg=cnavy}
+\setbeamercolor{author}{fg=cgrey}
+\setbeamercolor{date}{fg=cgrey}
+\setbeamercolor{frametitle}{fg=cnavy}
+
+
+\defbeamertemplate*{footline}{infolines theme}
+{
+	\leavevmode
+	\centering	
+	\begin{tikzpicture}
+	\def\xleft{0}
+	\def\xright{15}
+	\def\xmid{7.5}
+	\def\xadj{0.1cm}
+	\def\yadj{0.1cm}
+	\node[anchor=north west] (clogo) at (\xleft, 0)
+	{\pgfuseimage{chalmers-logo}};
+	\node[anchor=north east] (plabel) at (\xright, 0)
+	{\normalsize{Chemical Physics}};
+	\node[anchor=north, text width=0.2\textwidth, align=center] (slideno) at (\xmid, 0)
+	{\insertframenumber/\inserttotalframenumber};
+	\draw[ultra thick, cnavy]
+	([xshift=-\xadj,yshift=\yadj]clogo.north west) -- ([xshift=\xadj,yshift=\yadj]plabel.north east);
+	\draw[ultra thick, draw=none]
+	([xshift=-\xadj,yshift=-\yadj]clogo.south west) -- ([xshift=\xadj,yshift=-\yadj]plabel.south east);
+	\end{tikzpicture}	
+	\vskip0pt
+}
+
+\def\mytitleframe{\bgroup
+	\defbeamertemplate*{footline}{infolines theme2}
+	{
+		\leavevmode
+		\centering	
+		\begin{tikzpicture}
+		\def\xleft{0}
+		\def\xright{15}
+		\def\xmid{7.5}
+		\def\xadj{0.1cm}
+		\def\yadj{0.1cm}
+		\node[anchor=north west] (clogo) at (\xleft, 0)
+		{\pgfuseimage{chalmers-logo}};
+		\node[anchor=north east] (plabel) at (\xright, 0)
+		{\normalsize{Chemical Physics}};
+		\draw[ultra thick, cnavy]
+		([xshift=-\xadj,yshift=\yadj]clogo.north west) -- ([xshift=\xadj,yshift=\yadj]plabel.north east);
+		\draw[ultra thick, draw=none]
+		([xshift=-\xadj,yshift=-\yadj]clogo.south west) -- ([xshift=\xadj,yshift=-\yadj]plabel.south east);
+		\end{tikzpicture}	
+		\vskip0pt
+	}
+	\maketitle
+	\egroup
+	\addtocounter{framenumber}{-1}
+}
+\makeatother
+
+\setbeamerfont{block title}{size={}}
+\mode
+<all>
+
