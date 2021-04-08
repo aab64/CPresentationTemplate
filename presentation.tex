@@ -10,6 +10,9 @@
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage{tikz}
+\usetikzlibrary{shadows.blur}
+\usepackage{booktabs}
+\usepackage{siunitx}
 
 \usepackage{verbatim}
 \usepackage{chemfig}
@@ -25,28 +28,25 @@
 \usepackage{multicol}
 \usepackage[absolute,overlay]{textpos}
 \usetikzlibrary{calc}
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+\DeclareSIUnit{\calorie}{cal}
+\usetikzlibrary{overlay-beamer-styles}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   CUSTOM THEME DECLARATION
-\newcommand{\email}[0]{aab64@cam.ac.uk}
-\newcommand{\matlab}{../../../../../../Documents/matlab/figs/}
+\newcommand{\email}[0]{astrid.boje@chalmers.se}
 \usetheme{AstridChalmers}
 
-\newcommand{\COox}{{\ce{CO}_{\text{ox}}}}
-
-\newcommand{\thetaCOox}{\theta_{\COox}}
-\newcommand{\thetaOox}{\theta_{{\ce{O}}_{\text{ox}}}}
-\newcommand{\thetaOOox}{\theta_{{\ce{O2}}_{\text{ox}}}}
-\newcommand{\thetaox}{\theta_{\text{ox}}}
-\newcommand{\thetaCO}{\theta_{\ce{CO}}}
-\newcommand{\thetaOO}{\theta_{\ce{O2}}}
-\newcommand{\thetaO}{\theta_{\ce{O}}}
-
-\newcommand{\ka}[1]{k_{\text{a,}#1}}
-\newcommand{\kd}[1]{k_{\text{d,}#1}}
-\newcommand{\mur}[1]{{\color{cred}{#1}}}
-\newcommand{\mug}[1]{{\color{cgreen}{#1}}}
-\newcommand{\mub}[1]{{\color{cnavy}{#1}}}
+\newcommand{\kB}{k_{\text{B}}}
+\newcommand{\ka}{k_{\text{a}}}
+\newcommand{\kd}{k_{\text{d}}}
+\newcommand{\kf}{k_{\text{f}}}
+\newcommand{\kr}{k_{\text{r}}}
+\newcommand{\Ke}{K_{\text{eq}}}
+\newcommand{\dGr}{dG_{\text{rxn}}}
+\newcommand{\dGa}{dG_{\text{a}}}
 
 \setbeamercolor{block body}{bg=cgreen!10}
 \setbeamercolor{block title}{bg=cgreen!30}
@@ -54,7 +54,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   AUTHOR AND PRESENTATION DETAILS
-\title{\huge{Title}}
+\title{\huge{\textbf{Title}}}
 \author{Astrid Boje}
 %\institute[Chalmers University]
 %{
@@ -74,6 +74,10 @@
 	
 	\section{First section}
 	\input{slides/tikzslide}
+	
+	
+	\section{Acknowledgements}
+	\input{slides/acknowledgements}
 	
 \end{document}
 

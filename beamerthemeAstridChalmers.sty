@@ -2,69 +2,108 @@
 
 \definecolor{cnavy}{RGB}{4,41,112}
 \definecolor{cgrey}{RGB}{72,72,72}
-\definecolor{firebrick}{RGB}{178,34,34}
 \definecolor{cred}{RGB}{192,0,0}
 \definecolor{cgreen}{RGB}{0,157,0}
 \definecolor{darkgreen}{rgb}{0,0.7,0.0}
 \definecolor{darkblue}{rgb}{0,0.0,0.7}
 \definecolor{darkred}{rgb}{0.7,0.0,0.0}
 
+% Python colors
+\definecolor{firebrick}{RGB}{178,34,34}
+\definecolor{forestgreen}{RGB}{27,133,27}
+\definecolor{mediumorchid}{RGB}{186,85,211}
+\definecolor{mediumvioletred}{RGB}{199,21,133}
+\definecolor{tomato}{RGB}{255,99,71}
+\definecolor{royalblue}{RGB}{65,105,225}
+\definecolor{dodgerblue}{RGB}{30,144,255}
+\definecolor{teal}{RGB}{0,128,128}
+
 \setbeamercolor{title}{fg=cnavy}
 \setbeamercolor{author}{fg=cgrey}
 \setbeamercolor{date}{fg=cgrey}
 \setbeamercolor{frametitle}{fg=cnavy}
 
+\setbeamercolor{itemize item}{fg=dodgerblue}
+\setbeamercolor*{enumerate item}{fg=cnavy}
 
 \defbeamertemplate*{footline}{infolines theme}
 {
-	\leavevmode
-	\centering	
-	\begin{tikzpicture}
-	\def\xleft{0}
-	\def\xright{15}
-	\def\xmid{7.5}
-	\def\xadj{0.1cm}
-	\def\yadj{0.1cm}
-	\node[anchor=north west] (clogo) at (\xleft, 0)
-	{\pgfuseimage{chalmers-logo}};
-	\node[anchor=north east] (plabel) at (\xright, 0)
-	{\normalsize{Chemical Physics}};
-	\node[anchor=north, text width=0.2\textwidth, align=center] (slideno) at (\xmid, 0)
-	{\insertframenumber/\inserttotalframenumber};
-	\draw[ultra thick, cnavy]
-	([xshift=-\xadj,yshift=\yadj]clogo.north west) -- ([xshift=\xadj,yshift=\yadj]plabel.north east);
-	\draw[ultra thick, draw=none]
-	([xshift=-\xadj,yshift=-\yadj]clogo.south west) -- ([xshift=\xadj,yshift=-\yadj]plabel.south east);
-	\end{tikzpicture}	
-	\vskip0pt
+  \leavevmode
+  \centering	
+  \begin{tikzpicture}
+      \def\xleft{0}
+      \def\xright{15}
+      \def\xmid{7.5}
+      \def\xadj{0.1cm}
+      \def\yadj{0.1cm}
+      \node[anchor=north west] (clogo) at (\xleft, 0)
+          {\pgfuseimage{chalmers-logo}};
+      \node[anchor=north east] (plabel) at (\xright, 0)
+          {\small{Department of Physics}};
+      \node[anchor=north, text width=0.2\textwidth, align=center] (slideno) at (\xmid, 0)
+          {\insertframenumber/\inserttotalframenumber};
+      \draw[ultra thick, cnavy]
+          ([xshift=-\xadj,yshift=\yadj]clogo.north west) -- ([xshift=\xadj,yshift=\yadj]plabel.north east);
+      \draw[ultra thick, draw=none]
+          ([xshift=-\xadj,yshift=-\yadj]clogo.south west) -- ([xshift=\xadj,yshift=-\yadj]plabel.south east);
+  \end{tikzpicture}	
+  \vskip0pt
 }
 
 \def\mytitleframe{\bgroup
 	\defbeamertemplate*{footline}{infolines theme2}
 	{
-		\leavevmode
-		\centering	
-		\begin{tikzpicture}
-		\def\xleft{0}
-		\def\xright{15}
-		\def\xmid{7.5}
-		\def\xadj{0.1cm}
-		\def\yadj{0.1cm}
-		\node[anchor=north west] (clogo) at (\xleft, 0)
-		{\pgfuseimage{chalmers-logo}};
-		\node[anchor=north east] (plabel) at (\xright, 0)
-		{\normalsize{Chemical Physics}};
-		\draw[ultra thick, cnavy]
-		([xshift=-\xadj,yshift=\yadj]clogo.north west) -- ([xshift=\xadj,yshift=\yadj]plabel.north east);
-		\draw[ultra thick, draw=none]
-		([xshift=-\xadj,yshift=-\yadj]clogo.south west) -- ([xshift=\xadj,yshift=-\yadj]plabel.south east);
-		\end{tikzpicture}	
-		\vskip0pt
+	  \leavevmode
+	  \centering	
+	  \begin{tikzpicture}
+	      \def\xleft{0}
+	      \def\xright{15}
+	      \def\xmid{7.5}
+	      \def\xadj{0.1cm}
+	      \def\yadj{0.1cm}
+	      \node[anchor=north west] (clogo) at (\xleft, 0)
+	          {\pgfuseimage{chalmers-logo}};
+	      \node[anchor=north east] (plabel) at (\xright, 0)
+	          {\small{Department of Physics}};
+	      \draw[ultra thick, cnavy]
+	          ([xshift=-\xadj,yshift=\yadj]clogo.north west) -- ([xshift=\xadj,yshift=\yadj]plabel.north east);
+	      \draw[ultra thick, draw=none]
+	          ([xshift=-\xadj,yshift=-\yadj]clogo.south west) -- ([xshift=\xadj,yshift=-\yadj]plabel.south east);
+	  \end{tikzpicture}	
+	  \vskip0pt
 	}
 	\maketitle
 	\egroup
 	\addtocounter{framenumber}{-1}
 }
+
+%\define@key{beamerframe}{sectionheader}[true]{
+%	\defbeamertemplate*{footline}{infolines theme4}
+%	{
+%%		\leavevmode
+%%		\centering	
+%%		\begin{tikzpicture}
+%%		\def\xleft{0}
+%%		\def\xright{15}
+%%		\def\xmid{7.5}
+%%		\def\xadj{0.1cm}
+%%		\def\yadj{0.1cm}
+%%		\node[anchor=north west] (clogo) at (\xleft, 0)
+%%		{\pgfuseimage{chalmers-logo}};
+%%		\node[anchor=north east] (plabel) at (\xright, 0)
+%%		{\normalsize{Chemical Physics}};
+%%		\node[anchor=north, text width=0.2\textwidth, align=center] (slideno) at (\xmid, 0)
+%%		{};
+%%		\draw[ultra thick, cnavy]
+%%		([xshift=-\xadj,yshift=\yadj]clogo.north west) -- ([xshift=\xadj,yshift=\yadj]plabel.north east);
+%%		\draw[ultra thick, draw=none]
+%%		([xshift=-\xadj,yshift=-\yadj]clogo.south west) -- ([xshift=\xadj,yshift=-\yadj]plabel.south east);
+%%		\end{tikzpicture}	
+%%		\vskip0pt
+%	}
+%	\addtocounter{framenumber}{-1}
+%}
+
 \makeatother
 
 \setbeamerfont{block title}{size={}}
